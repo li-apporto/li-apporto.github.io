@@ -36,6 +36,12 @@ p.decode(<binary>);
 
 */
 
+function buf2hex(buffer) { // buffer is an ArrayBuffer
+  return [...new Uint8Array(buffer)]
+      .map(x => x.toString(16).padStart(2, '0'))
+      .join('');
+}
+
 // universal module definition
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
@@ -110,7 +116,7 @@ p.decode(<binary>);
     };
 
     var onPictureDecoded = function(buffer, width, height, infos) {
-      window.log_message += buffer + `\n`;
+      window.log_message += buf2hex(buffer) + `\n`;
       self.onPictureDecoded(buffer, width, height, infos);
 
       if (!buffer || !self.render) {
