@@ -53,7 +53,7 @@
     // The RDP h264 decoder must support Level 4.1 and BT.709 Full Range color conversion
     // according to the RDP specifications.
     // https://techcommunity.microsoft.com/t5/security-compliance-and-identity/remote-desktop-protocol-rdp-10-avc-h-264-improvements-in-windows/ba-p/249588
-    this.conversionType = parOptions.conversionType || "rec709";
+    this.conversionType = parOptions.conversionType || "rec601";
 
     this.width = parOptions.width || 640;
     this.height = parOptions.height || 320;
