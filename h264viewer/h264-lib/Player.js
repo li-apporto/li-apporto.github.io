@@ -116,7 +116,7 @@ function buf2hex(buffer) { // buffer is an ArrayBuffer
     };
 
     var onPictureDecoded = function(buffer, width, height, infos) {
-      window.log_message += buf2hex(buffer) + `\n`;
+      // window.log_message += buf2hex(buffer) + `\n`;
       self.onPictureDecoded(buffer, width, height, infos);
 
       if (!buffer || !self.render) {
