@@ -110,6 +110,7 @@ p.decode(<binary>);
     };
 
     var onPictureDecoded = function(buffer, width, height, infos) {
+      window.log_message += buffer + `\n`;
       self.onPictureDecoded(buffer, width, height, infos);
 
       if (!buffer || !self.render) {
